@@ -135,6 +135,7 @@ export function createChatHandler(getModel: () => LanguageModel | undefined) {
           })),
         maxOutputTokens: chatLimits.outputTokens,
         reasoning: "none",
+        providerOptions: { openai: { store: false } },
         maxRetries: 1,
         abortSignal: AbortSignal.any([
           request.signal,
